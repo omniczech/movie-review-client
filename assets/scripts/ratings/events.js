@@ -22,11 +22,39 @@ const onEditReview = (e) => {
     .catch(ui.updateReviewFailure)
 }
 
+const onShowReview = (e) => {
+  // e.preventDefault()
+  api.showReview()
+    .then(ui.showReviewSuccess)
+    .catch(ui.showReviewFailure)
+}
+
+const onDeleteReview = (e) => {
+  e.preventDefault()
+  const data = $(e.target).attr('data-review-id')
+  console.log(data)
+  api.deleteReview(data)
+    .then(ui.deleteReviewSuccess)
+    .catch(ui.deleteReviewFailure)
+}
+
+const onEditButtonClick = (e) => {
+  e.preventDefault()
+  const data = $(e.target).attr('data-review-id')
+  api.editButtonClick(data)
+    .then(ui.editButtonClickSuccess)
+    .catch(ui.editButtonClickFailure)
+}
+
 const addHandlers = () => {
   $('#add-review').on('submit', onAddReview)
-  $('#edit-review').on('submit', onEditReview)
+  $('body').on('submit', '#edit-review', onEditReview)
+  $('#show-user-reviews').on('submit', onShowReview)
+  $('body').on('submit', '.delete-review', onDeleteReview)
+  $('body').on('submit', '.start-update', onEditButtonClick)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowReview
 }

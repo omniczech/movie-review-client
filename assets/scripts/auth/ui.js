@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showAccount = require('../ratings/events')
 
 // Display successful call
 const successDisplay = (message) => {
@@ -32,6 +33,9 @@ const signInSuccess = (data) => {
   successDisplay('Signed in successfully!')
   console.log('Sign in success')
   store.user = data.user
+  $('.home').remove()
+  $('#sign-in-up-modal').modal('hide')
+  setTimeout(function () { showAccount.onShowReview() }, 0)
 }
 
 const signInFailure = () => {
