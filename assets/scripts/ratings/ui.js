@@ -51,6 +51,11 @@ const updateReviewFailure = () => {
 
 const showReviewSuccess = (data) => {
   successDisplay('Review Successfully shown!')
+  // console.log(data)
+  const dataSorted = data.movie_ratings.sort(function (a, b) {
+    return b.id - a.id
+  })
+  console.log(dataSorted)
   const showReviewsHtml = showUserReviewsTemplate({ ratings: data.movie_ratings })
   $('.col-md-12').append(showReviewsHtml)
 }

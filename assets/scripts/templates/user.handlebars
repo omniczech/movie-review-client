@@ -10,9 +10,9 @@
 <h2>My Reviews</h2>
 <div class="actual-reviews">
 {{#each ratings as |rating|}}
-<section class="review" id="{{rating.id}}">
+
   {{> review-editable rating=rating}}
-</section>
+
 
 {{/each}}
 </div>

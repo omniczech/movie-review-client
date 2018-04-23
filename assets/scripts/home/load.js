@@ -18,8 +18,14 @@ const showRecentReviews = () => {
 }
 
 const appendReviews = (data) => {
-  console.log(data)
-  const showReviewsHtml = showReviewsTemplate({ ratings: data.movie_ratings })
+  const dataSorted = data.movie_ratings.sort(function (a, b) {
+    return b.id - a.id
+  })
+  while (dataSorted.length > 3) {
+    dataSorted.pop()
+  }
+  console.log(dataSorted)
+  const showReviewsHtml = showReviewsTemplate({ ratings: dataSorted })
   $('.col-md-12').append(showReviewsHtml)
   $('.account-buttons').append('<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-up-modal">Sign In or Sign Up</button>')
 }
