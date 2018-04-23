@@ -14,39 +14,89 @@
 </head>
 
 <body>
-  <h1>Rate Some Movies</h1>
-  <div id="text"></div>
-  <p>Sign Up</p>
-  <form id="sign-up">
-    <input type="email" name="credentials[email]">
-    <input type="password" name="credentials[password]">
-    <input type="password" name="credentials[password_confirmation]">
-    <input type="submit">
-  </form>
-  <p>Sign in</p>
-  <form id="sign-in">
-    <input type="email" name="credentials[email]">
-    <input type="password" name="credentials[password]">
-    <input type="submit">
-  </form>
-  <p>Sign Out</p>
-  <form id="sign-out">
-    <input type="submit">
-  </form>
-  <p>Change Password</p>
-  <form id="change-pass">
-    <input type="password" name="passwords[old]">
-    <input type="password" name="passwords[new]">
-    <input type="submit">
-  </form>
-  <form id="add-review">
-    <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
-    <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
-    <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
-    <input type="text" name="movie_rating[date_watched]" placeholder="Date Watched">
-    <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
-    <input type="submit">
-  </form>
+  <section id="error-message"></section>
+  <section id="success-message"></section>
+  <header>
+    <h1>Rate Some Movies</h1>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-up-modal">Sign In or Sign Up</button>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Sign Out or Change Password</button>
+  </header>
+  <div class="container">
+    <div class="col-md-12">
+      <form id="add-review">
+        <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
+        <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
+        <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
+        <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
+        <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
+        <input type="submit">
+      </form>
+      <form id="edit-review">
+        <input type="text" name="id" placeholder="Rating ID">
+        <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
+        <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
+        <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
+        <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
+        <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
+        <input type="submit">
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sign-in-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign up for an account or sign in</h4>
+        </div>
+        <div class="modal-body">
+          <p>Sign Up</p>
+          <form id="sign-up">
+            <input type="email" name="credentials[email]">
+            <input type="password" name="credentials[password]">
+            <input type="password" name="credentials[password_confirmation]">
+            <input type="submit">
+          </form>
+          <p>Sign in</p>
+          <form id="sign-in">
+            <input type="email" name="credentials[email]">
+            <input type="password" name="credentials[password]">
+            <input type="submit">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sign-out-change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign up for an account or sign in</h4>
+        </div>
+        <div class="modal-body">
+          <p>Sign Out</p>
+          <form id="sign-out">
+            <input type="submit">
+          </form>
+          <p>Change Password</p>
+          <form id="change-pass">
+            <input type="password" name="passwords[old]">
+            <input type="password" name="passwords[new]">
+            <input type="submit">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
