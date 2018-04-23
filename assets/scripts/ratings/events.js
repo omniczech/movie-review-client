@@ -32,10 +32,12 @@ const onShowReview = (e) => {
 const onDeleteReview = (e) => {
   e.preventDefault()
   const data = $(e.target).attr('data-review-id')
-  console.log(data)
-  api.deleteReview(data)
-    .then(ui.deleteReviewSuccess)
-    .catch(ui.deleteReviewFailure)
+  // console.log(data)
+  if (confirm('Are you sure you want to remove this review? (This action cannot be reversed)')) {
+    api.deleteReview(data)
+      .then(ui.deleteReviewSuccess(data))
+      .catch(ui.deleteReviewFailure)
+  }
 }
 
 const onEditButtonClick = (e) => {
@@ -47,7 +49,7 @@ const onEditButtonClick = (e) => {
 }
 
 const addHandlers = () => {
-  $('#add-review').on('submit', onAddReview)
+  $('body').on('submit', '#add-review', onAddReview)
   $('body').on('submit', '#edit-review', onEditReview)
   $('#show-user-reviews').on('submit', onShowReview)
   $('body').on('submit', '.delete-review', onDeleteReview)

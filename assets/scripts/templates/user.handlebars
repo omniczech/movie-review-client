@@ -1,9 +1,19 @@
+<form id="add-review">
+  <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
+  <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
+  <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
+  <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
+  <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
+  <input type="submit">
+</form>
 <div class="user-reviews">
 <h2>My Reviews</h2>
+<div class="actual-reviews">
 {{#each ratings as |rating|}}
 <section class="review" id="{{rating.id}}">
   {{> review-editable rating=rating}}
 </section>
 
 {{/each}}
+</div>
 </div>
