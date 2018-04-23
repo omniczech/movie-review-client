@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Rate Some Movies</h1>
+  <div id="text"></div>
+  <p>Sign Up</p>
+  <form id="sign-up">
+    <input type="email" name="credentials[email]">
+    <input type="password" name="credentials[password]">
+    <input type="password" name="credentials[password_confirmation]">
+    <input type="submit">
+  </form>
+  <p>Sign in</p>
+  <form id="sign-in">
+    <input type="email" name="credentials[email]">
+    <input type="password" name="credentials[password]">
+    <input type="submit">
+  </form>
+  <p>Sign Out</p>
+  <form id="sign-out">
+    <input type="submit">
+  </form>
+  <p>Change Password</p>
+  <form id="change-pass">
+    <input type="password" name="passwords[old]">
+    <input type="password" name="passwords[new]">
+    <input type="submit">
+  </form>
+  <form id="add-review">
+    <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
+    <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
+    <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
+    <input type="text" name="movie_rating[date_watched]" placeholder="Date Watched">
+    <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
+    <input type="submit">
+  </form>
+</body>
+
 </html>
