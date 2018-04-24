@@ -10,7 +10,7 @@ const successDisplay = (message) => {
   $('#success-message').html('')
   $('#success-message').fadeIn()
   $('#success-message').append(`<p>${message}</p>`)
-  $('input[type="email"], input[type="password"]').val('')
+  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   setTimeout(function () { $('#success-message').fadeOut() }, 2000)
 }
 // Display unsuccessful call
@@ -18,6 +18,7 @@ const failureDisplay = (message) => {
   $('#error-message').html('')
   $('#error-message').fadeIn()
   $('#error-message').append(`<p>${message}</p>`)
+  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   setTimeout(function () { $('#error-message').fadeOut() }, 2000)
 }
 
@@ -29,6 +30,7 @@ const createReviewSuccess = (data) => {
   console.log(showNewReview)
   $('.actual-reviews').prepend(showNewReview)
   $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
+  $('.empty-reviews').remove()
 }
 
 const createReviewFailure = () => {
@@ -72,12 +74,19 @@ const editButtonClickSuccess = (data) => {
   setTimeout(function () {
     $('.review#' + data.movie_rating.id).append(showEditableReviewHtml)
   }, 0)
-  successDisplay('Editing begun')
+  successDisplay('Now editing your review')
 }
 
 const deleteReviewSuccess = (data) => {
   successDisplay('Review Successfully Removed!')
-  $('.review#' + data).fadeOut()
+  $('.review#' + data).fadeOut(500, function () { this.remove() })
+  console.log('Number of reviews', $('.review').length)
+  setTimeout(function () {
+    if ($('.review').length === 1) {
+      console.log('NONE')
+      $('.actual-reviews').append('<p class="empty-reviews">You don\'t seem to have any reviews. You should add some!</p>')
+    }
+  }, 0)
   console.log(data)
 }
 

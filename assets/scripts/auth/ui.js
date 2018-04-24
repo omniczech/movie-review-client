@@ -9,7 +9,7 @@ const successDisplay = (message) => {
   $('#success-message').html('')
   $('#success-message').fadeIn()
   $('#success-message').append(`<p>${message}</p>`)
-  $('input[type="email"], input[type="password"]').val('')
+  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   setTimeout(function () { $('#success-message').fadeOut() }, 2000)
 }
 // Display unsuccessful call
@@ -17,6 +17,7 @@ const failureDisplay = (message) => {
   $('#error-message').html('')
   $('#error-message').fadeIn()
   $('#error-message').append(`<p>${message}</p>`)
+  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   setTimeout(function () { $('#error-message').fadeOut() }, 2000)
 }
 

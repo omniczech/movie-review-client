@@ -26,16 +26,16 @@
   <div class="container">
     <div class="col-md-12">
       <!-- <form id="edit-review">
-        <input type="text" name="id" placeholder="Rating ID">
-        <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
-        <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
-        <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
-        <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
+        <input required type="text" name="id" placeholder="Rating ID">
+        <input required type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
+        <input required type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
+        <input required type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
+        <input required type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
         <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
-        <input type="submit">
+        <input required type="submit">
       </form> -->
       <!-- <form id="show-user-reviews">
-        <input type="submit" value="Show me my Reviews">
+        <input required type="submit" value="Show me my Reviews">
       </form> -->
     </div>
   </div>
@@ -52,30 +52,30 @@
           <form id="sign-up">
             <div class="input-group">
               <div class="input-group-addon">Email</div>
-              <input type="email" name="credentials[email]" class="form-control">
+              <input required type="email" name="credentials[email]" class="form-control">
             </div>
             <div class="input-group">
               <div class="input-group-addon">Password</div>
-              <input type="password" name="credentials[password]" class="form-control">
+              <input required type="password" name="credentials[password]" class="form-control">
             </div>
             <div class="input-group">
               <div class="input-group-addon">Password Confirmation</div>
-              <input type="password" name="credentials[password_confirmation]" class="form-control">
+              <input required type="password" name="credentials[password_confirmation]" class="form-control">
             </div>
-            <input type="submit" value="Sign Up" class="form-control">
+            <input required type="submit" value="Sign Up" class="form-control">
           </form>
           <hr>
           <p>Sign in</p>
           <form id="sign-in">
             <div class="input-group">
               <div class="input-group-addon">Email</div>
-              <input type="email" name="credentials[email]" class="form-control">
+              <input required type="email" name="credentials[email]" class="form-control">
             </div>
             <div class="input-group">
               <div class="input-group-addon">Password</div>
-              <input type="password" name="credentials[password]" class="form-control">
+              <input required type="password" name="credentials[password]" class="form-control">
             </div>
-            <input type="submit" value="Sign In" class="form-control">
+            <input required type="submit" value="Sign In" class="form-control">
           </form>
         </div>
         <div class="modal-footer">
@@ -95,20 +95,20 @@
           <div class="modal-body">
             <p>Sign Out</p>
             <form id="sign-out">
-              <input type="submit" value="Sign Out" class="form-control">
+              <input required type="submit" value="Sign Out" class="form-control">
             </form>
             <hr>
             <p>Change Password</p>
             <form id="change-pass">
               <div class="input-group">
                 <div class="input-group-addon">Old Password</div>
-                <input type="password" name="passwords[old]" class="form-control">
+                <input required type="password" name="passwords[old]" class="form-control">
               </div>
               <div class="input-group">
                 <div class="input-group-addon">New Password</div>
-                <input type="password" name="passwords[new]" class="form-control">
+                <input required type="password" name="passwords[new]" class="form-control">
               </div>
-              <input type="submit" value="Change Password" class="form-control">
+              <input required type="submit" value="Change Password" class="form-control">
             </form>
           </div>
           <div class="modal-footer">
