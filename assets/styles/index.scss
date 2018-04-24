@@ -19,12 +19,51 @@ header {
   overflow: hidden;
 }
 .review{
+  padding: 10px;
   border-bottom: 1px solid #666;
+  overflow: hidden;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  form {
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 10px;
+  }
+}
+
+#add-review {
+  .row {
+    margin-bottom: 20px;
+  }
+}
+
+input,
+textarea {
+  font-weight: 400;
+  max-width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input {
+  resize: none;
 }
 
 #edit-review {
   label {
     display: block;
+
+  }
+}
+
+.modal {
+  input {
+    margin-bottom: 20px;
   }
 }
 

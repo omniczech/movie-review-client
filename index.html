@@ -50,16 +50,16 @@
         <div class="modal-body">
           <p>Sign Up</p>
           <form id="sign-up">
-            <input type="email" name="credentials[email]">
-            <input type="password" name="credentials[password]">
-            <input type="password" name="credentials[password_confirmation]">
-            <input type="submit">
+            <input type="email" name="credentials[email]" class="form-control">
+            <input type="password" name="credentials[password]" class="form-control">
+            <input type="password" name="credentials[password_confirmation]" class="form-control">
+            <input type="submit" value="Sign Up" class="form-control">
           </form>
           <p>Sign in</p>
           <form id="sign-in">
-            <input type="email" name="credentials[email]">
-            <input type="password" name="credentials[password]">
-            <input type="submit">
+            <input type="email" name="credentials[email]" class="form-control">
+            <input type="password" name="credentials[password]" class="form-control">
+            <input type="submit" value="Sign In" class="form-control">
           </form>
         </div>
         <div class="modal-footer">
@@ -74,18 +74,18 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign up for an account or sign in</h4>
+          <h4 class="modal-title" id="myModalLabel">Sign out or change password</h4>
         </div>
         <div class="modal-body">
           <p>Sign Out</p>
           <form id="sign-out">
-            <input type="submit">
+            <input type="submit" value="Sign Out" class="form-control">
           </form>
           <p>Change Password</p>
           <form id="change-pass">
-            <input type="password" name="passwords[old]">
-            <input type="password" name="passwords[new]">
-            <input type="submit">
+            <input type="password" name="passwords[old]" class="form-control">
+            <input type="password" name="passwords[new]" class="form-control">
+            <input type="submit" value="Change Password">
           </form>
         </div>
         <div class="modal-footer">

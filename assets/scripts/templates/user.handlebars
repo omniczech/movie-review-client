@@ -1,19 +1,24 @@
+<h2>Add a new Review</h2>
 <form id="add-review">
-  <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
-  <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
-  <input type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
-  <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
-  <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
-  <input type="submit">
+  <div class="row">
+    <div class="col-sm-6"><input type="text" name="movie_rating[movie_title]" placeholder="Movie Title" class="form-control"></div>
+    <div class="col-sm-6"><input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre" class="form-control"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6"><input type="number" name="movie_rating[rating]" placeholder="Rating (out of 10)" class="form-control"></div>
+    <div class="col-sm-6"><input type="date" name="movie_rating[date_watched]" placeholder="Date Watched" class="form-control"></div>
+  </div>
+  <div class="row"><div class="col-sm-12"><textarea name="movie_rating[review]" placeholder="Movie Title" class="form-control"></textarea></div></div>
+  <div class="row"><div class="col-sm-3"><input type="submit" value="Add Review" class="form-control"></div></div>
 </form>
 <div class="user-reviews">
-<h2>My Reviews</h2>
-<div class="actual-reviews">
-{{#each ratings as |rating|}}
+  <h2>My Reviews</h2>
+  <div class="actual-reviews">
+    {{#each ratings as |rating|}}
 
-  {{> review-editable rating=rating}}
+      {{> review-editable rating=rating}}
 
 
-{{/each}}
-</div>
+    {{/each}}
+  </div>
 </div>

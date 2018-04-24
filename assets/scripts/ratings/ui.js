@@ -28,6 +28,7 @@ const createReviewSuccess = (data) => {
   const showNewReview = showEditableReviewsTemplate({ rating: data.movie_rating })
   console.log(showNewReview)
   $('.actual-reviews').prepend(showNewReview)
+  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
 }
 
 const createReviewFailure = () => {
