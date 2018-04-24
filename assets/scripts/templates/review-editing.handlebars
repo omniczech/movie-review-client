@@ -1,9 +1,48 @@
 <form id="edit-review">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Movie Title: </div>
+        <input required type="text" name="movie_rating[movie_title]" value="{{rating.movie_title}}" class="form-control">
+      </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="input-group">
+      <div class="input-group-addon">Genre: </div>
+      <input required type="text" name="movie_rating[movie_genre]" value="{{rating.movie_genre}}" class="form-control">
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Rating (out of 10): </div>
+        <input required type="number" name="movie_rating[rating]" min="0" max="10" value="{{rating.rating}}" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Date Watched: </div>
+        <input required type="date" name="movie_rating[date_watched]" value="{{rating.date_watched}}" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <textarea required name="movie_rating[review]" class="form-control">{{rating.review}}</textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <input required type="submit" value="Update Review" class="form-control">
+    </div>
+  </div>
+
   <label><input required type="text" name="id" value="{{rating.id}}" style="display:none"></label>
-  <label>Movie title: <input required type="text" name="movie_rating[movie_title]" value="{{rating.movie_title}}"></label>
-  <label>Genre: <input required type="text" name="movie_rating[movie_genre]" value="{{rating.movie_genre}}"></label>
-  <label>Rating: <input required type="number" name="movie_rating[rating]" min="0" max="10" value="{{rating.rating}}"></label>
-  <label>Review: <textarea required name="movie_rating[review]">{{rating.review}}</textarea></label>
-  <label>Date Seen: <input required type="date" name="movie_rating[date_watched]" value="{{rating.date_watched}}"></label>
-  <input required type="submit">
+  <!-- <label>Movie title: <input required type="text" name="movie_rating[movie_title]" value="{{rating.movie_title}}"></label> -->
+  <!-- <label>Genre: <input required type="text" name="movie_rating[movie_genre]" value="{{rating.movie_genre}}"></label> -->
+  <!-- <label>Rating: <input required type="number" name="movie_rating[rating]" min="0" max="10" value="{{rating.rating}}"></label> -->
+  <!-- <label>Review: <textarea required name="movie_rating[review]">{{rating.review}}</textarea></label> -->
+  <!-- <label>Date Seen: <input required type="date" name="movie_rating[date_watched]" value="{{rating.date_watched}}"></label> -->
 </form>
