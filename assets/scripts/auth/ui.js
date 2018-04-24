@@ -61,9 +61,9 @@ const signOutSuccess = () => {
   successDisplay('Signed out successfully!')
   store.user = null
   $('.account-buttons').empty()
-  $('.account-buttons').append('<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-up-modal">Sign In or Sign Up</button>')
   $('.user-reviews, #add-review').remove()
   showHome.loader()
+  $('#sign-out-change-pass-modal').modal('hide')
 }
 
 const signOutFailure = () => {

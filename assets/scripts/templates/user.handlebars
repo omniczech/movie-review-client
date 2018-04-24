@@ -1,15 +1,43 @@
-<h2>Add a new Review</h2>
 <form id="add-review">
+  <h2>Add a new Review</h2>
   <div class="row">
-    <div class="col-sm-6"><input type="text" name="movie_rating[movie_title]" placeholder="Movie Title" class="form-control"></div>
-    <div class="col-sm-6"><input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre" class="form-control"></div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Movie Title: </div>
+        <input type="text" name="movie_rating[movie_title]" placeholder="Movie Title" class="form-control">
+      </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="input-group">
+      <div class="input-group-addon">Genre: </div>
+      <input type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre" class="form-control">
+    </div>
+  </div>
   </div>
   <div class="row">
-    <div class="col-sm-6"><input type="number" name="movie_rating[rating]" placeholder="Rating (out of 10)" class="form-control"></div>
-    <div class="col-sm-6"><input type="date" name="movie_rating[date_watched]" placeholder="Date Watched" class="form-control"></div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Rating (out of 10): </div>
+        <input type="number" name="movie_rating[rating]" placeholder="Rating (out of 10)" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">Date Watched: </div>
+        <input type="date" name="movie_rating[date_watched]" placeholder="Date Watched" class="form-control">
+      </div>
+    </div>
   </div>
-  <div class="row"><div class="col-sm-12"><textarea name="movie_rating[review]" placeholder="Movie Review" class="form-control"></textarea></div></div>
-  <div class="row"><div class="col-sm-3"><input type="submit" value="Add Review" class="form-control"></div></div>
+  <div class="row">
+    <div class="col-sm-12">
+      <textarea name="movie_rating[review]" placeholder="Movie Review" class="form-control"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <input type="submit" value="Add Review" class="form-control">
+    </div>
+  </div>
 </form>
 <div class="user-reviews">
   <h2>My Reviews</h2>
@@ -18,6 +46,8 @@
 
       {{> review-editable rating=rating}}
 
+      {{else}}
+        <p>You don't seem to have any reviews. You should add some!</p>
 
     {{/each}}
   </div>
