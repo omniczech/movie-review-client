@@ -38,7 +38,7 @@ const signInSuccess = (data) => {
   $('#sign-in-up-modal').modal('hide')
   setTimeout(function () { showAccount.onShowReview() }, 0)
   $('.account-buttons').empty()
-  $('.account-buttons').append('<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Sign Out or Change Password</button>')
+  $('.account-buttons').append(`<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Sign Out or Change Password</button><p>Signed in as: ${data.user.email}</p>`)
 }
 
 const signInFailure = () => {

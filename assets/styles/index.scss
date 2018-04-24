@@ -13,8 +13,13 @@ header {
     margin: 0;
     font-size: 30px;
   }
-  button{
+  button, p{
     float: right;
+  }
+
+  p{
+    float: right;
+    padding: 7px 20px;
   }
   overflow: hidden;
 }

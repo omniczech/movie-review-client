@@ -51,7 +51,7 @@ const updateReviewFailure = () => {
 }
 
 const showReviewSuccess = (data) => {
-  successDisplay('Review Successfully shown!')
+  // successDisplay('Review Successfully shown!')
   // console.log(data)
   const dataSorted = data.movie_ratings.sort(function (a, b) {
     return b.id - a.id
