@@ -11,11 +11,18 @@ const onAddReview = (e) => {
   e.preventDefault()
   const data = getFormFields(e.target)
   const bannedWord = 'Butt Mansfield'
+  const shrek = 'Shrek'
   console.log(data)
   console.log(filter.clean(data.movie_rating.review))
   if (data.movie_rating.review.includes(bannedWord) || data.movie_rating.movie_title.includes(bannedWord)) {
     $('*').addClass('rainbow')
     $('.main-content').prepend('<div id="party-warning"><h1>Party Mode Enabled</h1><button id="disable-party">Disable Party Mode and promise not to use "Butt Mansfield" in your review</button></div>')
+  }
+  if (data.movie_rating.movie_title.includes(shrek)) {
+    $('*').addClass('shrek')
+    api.createReview(data)
+      .then(ui.createReviewSuccess)
+      .catch(ui.createReviewFailure)
   }
   if (filter.isProfane(data.movie_rating.review) || filter.isProfane(data.movie_rating.movie_title) || filter.isProfane()) {
     global.failureDisplayGlobal('It looks like you\'re trying to use some foul language. <br>Please edit your review fields to not contain any curse words, then resubmit.', false, 5000)

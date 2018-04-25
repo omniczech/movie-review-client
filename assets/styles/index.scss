@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../public/shrek/stylesheet';
 @mixin shadow {
   box-shadow: 1px 1px 2px $shadow;
 }
@@ -13,8 +14,13 @@ $white: #fff;
 $backdrop: #707987;
 $shadow: #333;
 
+
 body {
   background-color: $backdrop;
+}
+
+.shrek {
+  font-family: 'Shrek';
 }
 
 header {
