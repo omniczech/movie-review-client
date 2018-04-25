@@ -1,14 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 @mixin shadow {
   box-shadow: 1px 1px 2px $shadow;
 }
-
 @mixin big-shadow {
   box-shadow: 0 0 20px $shadow;
 }
-
 $dark-green: #060;
 $light-green: #9f9;
 $header: #3f444c;
@@ -49,6 +46,12 @@ header {
     margin-bottom: 0;
     padding: 7px 20px;
   }
+
+  #sign-out {
+    float: right;
+    margin-right: 15px;
+    max-width: 150px;
+  }
 }
 
 .home {
@@ -59,6 +62,12 @@ header {
   @include big-shadow;
   background: $white;
   padding-top: 73px;
+}
+
+.tab-pane {
+  border: 1px solid #ddd;
+  border-top: 0;
+  padding: 10px;
 }
 
 .review {

@@ -46,6 +46,10 @@ const appendReviews = (data) => {
   $('header').append(headerHtml)
   $('.account-buttons').append('<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-up-modal">Sign In or Sign Up</button>')
   $('body').append(modalsHtml)
+  $('.nav-tabs a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
 }
 
 const addMoreReviews = () => {

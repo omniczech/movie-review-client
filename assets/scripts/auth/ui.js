@@ -24,6 +24,7 @@ const failureDisplay = (message) => {
 const signUpSuccess = () => {
   console.log('Sign up success')
   successDisplay('Signed up successfully!<br>Please sign in now.')
+  $('#sign-in-panel').tab('show')
 }
 
 const signUpFailure = () => {
@@ -39,7 +40,11 @@ const signInSuccess = (data) => {
   $('#sign-in-up-modal').modal('hide')
   setTimeout(function () { showAccount.onShowReview() }, 0)
   $('.account-buttons').empty()
-  $('.account-buttons').append(`<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Sign Out or Change Password</button><p>Signed in as: ${data.user.email}</p>`)
+  $('.account-buttons').append(`<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Change Password</button>
+  <form id="sign-out">
+    <input required type="submit" value="Sign Out" class="form-control">
+  </form>
+  <p>Signed in as: ${data.user.email}</p>`)
 }
 
 const signInFailure = () => {
