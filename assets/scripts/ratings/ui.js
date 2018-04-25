@@ -41,10 +41,11 @@ const createReviewFailure = () => {
 const updateReviewSuccess = (data) => {
   console.log('Create Review success')
   successDisplay('Review Successfully updated!')
-  const showEditableReviewHtml = showEditableReviewsTemplate({ rating: data.movie_rating })
+  const showEditableReviewHtml = showEditableReviewsTemplate({ rating: data.movie_rating, single: true })
   $('.review#' + data.movie_rating.id).empty()
   $('.review#' + data.movie_rating.id).append(showEditableReviewHtml)
   console.log(data)
+  $('.start-update').show()
 }
 
 const updateReviewFailure = () => {
@@ -75,6 +76,7 @@ const editButtonClickSuccess = (data) => {
     $('.review#' + data.movie_rating.id).append(showEditableReviewHtml)
   }, 0)
   successDisplay('Now editing your review')
+  $('.start-update').hide()
 }
 
 const deleteReviewSuccess = (data) => {

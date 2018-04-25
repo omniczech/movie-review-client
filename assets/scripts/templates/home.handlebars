@@ -1,9 +1,11 @@
 <div class="home">
 <h2>Recent Reviews</h2>
+
 {{#each ratings as |rating|}}
 <section class="review">
   {{> review-no-edit rating=rating}}
 </section>
 
 {{/each}}
+
 </div>

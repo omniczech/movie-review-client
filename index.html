@@ -17,106 +17,12 @@
   <section id="error-message"></section>
   <section id="success-message"></section>
   <header>
-    <h1>Rate Some Movies</h1>
-    <div class="account-buttons">
-      <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-up-modal">Sign In or Sign Up</button> -->
-      <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Sign Out or Change Password</button> -->
-    </div>
   </header>
   <div class="container">
     <div class="col-md-12">
-      <!-- <form id="edit-review">
-        <input required type="text" name="id" placeholder="Rating ID">
-        <input required type="text" name="movie_rating[movie_title]" placeholder="Movie Title">
-        <input required type="text" name="movie_rating[movie_genre]" placeholder="Movie Genre">
-        <input required type="text" name="movie_rating[rating]" placeholder="Rating (out of 10)">
-        <input required type="date" name="movie_rating[date_watched]" placeholder="Date Watched">
-        <textarea name="movie_rating[review]" placeholder="Movie Title"></textarea>
-        <input required type="submit">
-      </form> -->
-      <!-- <form id="show-user-reviews">
-        <input required type="submit" value="Show me my Reviews">
-      </form> -->
     </div>
   </div>
 
-  <div class="modal fade" id="sign-in-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign up for an account or sign in</h4>
-        </div>
-        <div class="modal-body">
-          <p>Sign Up</p>
-          <form id="sign-up">
-            <div class="input-group">
-              <div class="input-group-addon">Email</div>
-              <input required type="email" name="credentials[email]" class="form-control">
-            </div>
-            <div class="input-group">
-              <div class="input-group-addon">Password</div>
-              <input required type="password" name="credentials[password]" class="form-control">
-            </div>
-            <div class="input-group">
-              <div class="input-group-addon">Password Confirmation</div>
-              <input required type="password" name="credentials[password_confirmation]" class="form-control">
-            </div>
-            <input required type="submit" value="Sign Up" class="form-control">
-          </form>
-          <hr>
-          <p>Sign in</p>
-          <form id="sign-in">
-            <div class="input-group">
-              <div class="input-group-addon">Email</div>
-              <input required type="email" name="credentials[email]" class="form-control">
-            </div>
-            <div class="input-group">
-              <div class="input-group-addon">Password</div>
-              <input required type="password" name="credentials[password]" class="form-control">
-            </div>
-            <input required type="submit" value="Sign In" class="form-control">
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="modal fade" id="sign-out-change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Sign out or change password</h4>
-          </div>
-          <div class="modal-body">
-            <p>Sign Out</p>
-            <form id="sign-out">
-              <input required type="submit" value="Sign Out" class="form-control">
-            </form>
-            <hr>
-            <p>Change Password</p>
-            <form id="change-pass">
-              <div class="input-group">
-                <div class="input-group-addon">Old Password</div>
-                <input required type="password" name="passwords[old]" class="form-control">
-              </div>
-              <div class="input-group">
-                <div class="input-group-addon">New Password</div>
-                <input required type="password" name="passwords[new]" class="form-control">
-              </div>
-              <input required type="submit" value="Change Password" class="form-control">
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 </body>
 
 </html>

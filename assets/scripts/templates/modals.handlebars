@@ -1,0 +1,77 @@
+<div class="modal fade" id="sign-in-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign up for an account or sign in</h4>
+      </div>
+      <div class="modal-body">
+        <p>Sign Up</p>
+        <form id="sign-up">
+          <div class="input-group">
+            <div class="input-group-addon">Email</div>
+            <input required type="email" name="credentials[email]" class="form-control">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon">Password</div>
+            <input required type="password" name="credentials[password]" class="form-control">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon">Password Confirmation</div>
+            <input required type="password" name="credentials[password_confirmation]" class="form-control">
+          </div>
+          <input required type="submit" value="Sign Up" class="form-control">
+        </form>
+        <hr>
+        <p>Sign in</p>
+        <form id="sign-in">
+          <div class="input-group">
+            <div class="input-group-addon">Email</div>
+            <input required type="email" name="credentials[email]" class="form-control">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon">Password</div>
+            <input required type="password" name="credentials[password]" class="form-control">
+          </div>
+          <input required type="submit" value="Sign In" class="form-control">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sign-out-change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign out or change password</h4>
+      </div>
+      <div class="modal-body">
+        <p>Sign Out</p>
+        <form id="sign-out">
+          <input required type="submit" value="Sign Out" class="form-control">
+        </form>
+        <hr>
+        <p>Change Password</p>
+        <form id="change-pass">
+          <div class="input-group">
+            <div class="input-group-addon">Old Password</div>
+            <input required type="password" name="passwords[old]" class="form-control">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon">New Password</div>
+            <input required type="password" name="passwords[new]" class="form-control">
+          </div>
+          <input required type="submit" value="Change Password" class="form-control">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

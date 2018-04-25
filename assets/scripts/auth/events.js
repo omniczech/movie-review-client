@@ -39,10 +39,10 @@ const onChangePassword = (e) => {
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
-  $('#change-pass').on('submit', onChangePassword)
+  $('body').on('submit', '#sign-up', onSignUp)
+  $('body').on('submit', '#sign-in', onSignIn)
+  $('body').on('submit', '#sign-out', onSignOut)
+  $('body').on('submit', '#change-pass', onChangePassword)
 }
 
 module.exports = {

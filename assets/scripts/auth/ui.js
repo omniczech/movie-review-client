@@ -61,7 +61,7 @@ const signOutSuccess = () => {
   console.log('Sign out success')
   successDisplay('Signed out successfully!')
   store.user = null
-  $('.account-buttons').empty()
+  $('header').empty()
   $('.user-reviews, #add-review').remove()
   showHome.loader()
   $('#sign-out-change-pass-modal').modal('hide')

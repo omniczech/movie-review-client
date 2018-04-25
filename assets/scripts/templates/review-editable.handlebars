@@ -1,3 +1,17 @@
+{{#if single}}
+<p>Movie Title: {{rating.movie_title}}</p>
+<p>Genre: {{rating.movie_genre}}</p>
+<p>Rating: {{rating.rating}}/10</p>
+<p>Review: {{rating.review}}</p>
+<p>Date seen: {{rating.date_watched}}</p>
+<form class="delete-review" data-review-id="{{rating.id}}">
+  <input type="submit" value="Delete my review" class="btn-default">
+</form>
+<form class="start-update" data-review-id="{{rating.id}}">
+  <input type="submit" value="Edit my review" class="btn-default">
+</form>
+
+{{else}}
 <section class="review" id="{{rating.id}}">
 <p>Movie Title: {{rating.movie_title}}</p>
 <p>Genre: {{rating.movie_genre}}</p>
@@ -11,3 +25,4 @@
   <input type="submit" value="Edit my review" class="btn-default">
 </form>
 </section>
+{{/if}}
