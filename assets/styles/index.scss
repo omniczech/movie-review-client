@@ -162,75 +162,120 @@ input {
 
 .rainbow {
   /* Chrome, Safari, Opera */
-  -webkit-animation: rainbow 3s infinite;
+  -webkit-animation: rainbow 7s infinite;
   /* Internet Explorer */
-  -ms-animation: rainbow 3s infinite;
+  -ms-animation: rainbow 7s infinite;
   /* Standar Syntax */
-  animation: rainbow 3s infinite;
+  animation: rainbow 7s infinite;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes rainbow {
-  20% {
+  0% {
     color: red;
+    background: green
   }
 
-  40% {
+  15% {
+    color: orange;
+    background: blue;
+  }
+
+  30% {
     color: yellow;
+    background: purple;
+  }
+
+  45% {
+    color: green;
+    background:red;
   }
 
   60% {
-    color: green;
+    color: blue;
+    background:orange;
   }
 
-  80% {
-    color: blue;
+  75% {
+    color: purple;
+    background: yellow;
   }
 
   100% {
-    color: orange;
+    color: red;
+    background: green
   }
 }
 /* Internet Explorer */
 @-ms-keyframes rainbow {
-  20% {
+  0% {
     color: red;
+    background: green
   }
 
-  40% {
+  15% {
+    color: orange;
+    background: blue;
+  }
+
+  30% {
     color: yellow;
+    background: purple;
+  }
+
+  45% {
+    color: green;
+    background:red;
   }
 
   60% {
-    color: green;
+    color: blue;
+    background:orange;
   }
 
-  80% {
-    color: blue;
+  75% {
+    color: purple;
+    background: yellow;
   }
 
   100% {
-    color: orange;
+    color: red;
+    background: green
   }
 }
 /* Standar Syntax */
 @keyframes rainbow {
-  5% {
-    color: red;
-  }
-
-  35% {
-    color: yellow;
-  }
-
-  65% {
-    color: green;
-  }
-
-  85% {
-    color: blue;
-  }
-
   0% {
+    color: red;
+    background: green
+  }
+
+  15% {
     color: orange;
+    background: blue;
+  }
+
+  30% {
+    color: yellow;
+    background: purple;
+  }
+
+  45% {
+    color: green;
+    background:red;
+  }
+
+  60% {
+    color: blue;
+    background:orange;
+  }
+
+  75% {
+    color: purple;
+    background: yellow;
+  }
+
+  100% {
+    color: red;
+    background: green
   }
 }

@@ -2,16 +2,23 @@
 
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
+const global = require('../global')
 const ui = require('./ui')
+const Filter = require('bad-words')
+const filter = new Filter()
 
 const onAddReview = (e) => {
   e.preventDefault()
   const data = getFormFields(e.target)
   const bannedWord = 'Butt Mansfield'
   console.log(data)
+  console.log(filter.clean(data.movie_rating.review))
   if (data.movie_rating.review.includes(bannedWord) || data.movie_rating.movie_title.includes(bannedWord)) {
     $('*').addClass('rainbow')
-    $('.main-content').prepend('<h1>NICE TRY</h1>')
+    $('.main-content').prepend('<div id="party-warning"><h1>Party Mode Enabled</h1><button id="disable-party">Disable Party Mode and promise not to use "Butt Mansfield" in your review</button></div>')
+  }
+  if (filter.isProfane(data.movie_rating.review) || filter.isProfane(data.movie_rating.movie_title) || filter.isProfane()) {
+    global.failureDisplayGlobal('It looks like you\'re trying to use some foul language. <br>Please edit your review fields to not contain any curse words, then resubmit.', false, 5000)
   } else {
     api.createReview(data)
       .then(ui.createReviewSuccess)

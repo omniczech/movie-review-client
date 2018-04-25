@@ -14,4 +14,8 @@ $(() => {
   ratingEvents.addHandlers()
   homeEvents.loader()
   homeEvents.addHandlers()
+  $('body').on('click', '#disable-party', () => {
+    $('*').removeClass('rainbow')
+    $('#party-warning').remove()
+  })
 })
