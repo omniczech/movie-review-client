@@ -20,9 +20,6 @@ const onAddReview = (e) => {
   }
   if (data.movie_rating.movie_title.includes(shrek)) {
     $('*').addClass('shrek')
-    api.createReview(data)
-      .then(ui.createReviewSuccess)
-      .catch(ui.createReviewFailure)
   }
   if (filter.isProfane(data.movie_rating.review) || filter.isProfane(data.movie_rating.movie_title) || filter.isProfane(data.movie_rating.movie_genre)) {
     global.failureDisplayGlobal('It looks like you\'re trying to use some foul language. <br>Please edit your review fields to not contain any curse words, then resubmit.', false, 5000)
