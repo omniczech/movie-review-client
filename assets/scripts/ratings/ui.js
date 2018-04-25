@@ -44,6 +44,8 @@ const updateReviewSuccess = (data) => {
   const showEditableReviewHtml = showEditableReviewsTemplate({ rating: data.movie_rating, single: true })
   $('.review#' + data.movie_rating.id).empty()
   $('.review#' + data.movie_rating.id).append(showEditableReviewHtml)
+  $('.review#' + data.movie_rating.id).css('background', '#9f9')
+  setTimeout(() => { $('.review#' + data.movie_rating.id).css('background', 'transparent') }, 500)
   console.log(data)
   $('.start-update').show()
 }
