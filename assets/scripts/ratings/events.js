@@ -7,10 +7,16 @@ const ui = require('./ui')
 const onAddReview = (e) => {
   e.preventDefault()
   const data = getFormFields(e.target)
+  const bannedWord = 'Butt Mansfield'
   console.log(data)
-  api.createReview(data)
-    .then(ui.createReviewSuccess)
-    .catch(ui.createReviewFailure)
+  if (data.movie_rating.review.includes(bannedWord) || data.movie_rating.movie_title.includes(bannedWord)) {
+    $('*').addClass('rainbow')
+    $('.main-content').prepend('<h1>NICE TRY</h1>')
+  } else {
+    api.createReview(data)
+      .then(ui.createReviewSuccess)
+      .catch(ui.createReviewFailure)
+  }
 }
 
 const onEditReview = (e) => {

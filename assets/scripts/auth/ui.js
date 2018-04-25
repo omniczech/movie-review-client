@@ -11,6 +11,7 @@ const successDisplay = (message) => {
   $('#success-message').append(`<p>${message}</p>`)
   $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   setTimeout(function () { $('#success-message').fadeOut() }, 2000)
+  $('.modal').modal('hide')
 }
 // Display unsuccessful call
 const failureDisplay = (message) => {
@@ -37,7 +38,7 @@ const signInSuccess = (data) => {
   console.log('Sign in success')
   store.user = data.user
   $('.home').remove()
-  $('#sign-in-up-modal').modal('hide')
+  // $('#sign-in-up-modal').modal('hide')
   setTimeout(function () { showAccount.onShowReview() }, 0)
   $('.account-buttons').empty()
   $('.account-buttons').append(`<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Change Password</button>
@@ -69,7 +70,7 @@ const signOutSuccess = () => {
   $('header').empty()
   $('.user-reviews, #add-review').remove()
   showHome.loader()
-  $('#sign-out-change-pass-modal').modal('hide')
+  // $('#sign-out-change-pass-modal').modal('hide')
 }
 
 const signOutFailure = () => {
