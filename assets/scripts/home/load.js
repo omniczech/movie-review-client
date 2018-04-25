@@ -1,5 +1,7 @@
 const config = require('../config')
+const store = require('../store')
 const showReviewsTemplate = require('../templates/home.handlebars')
+const showReviewTemplateAddMore = require('../templates/home-add-more.handlebars')
 const modalsTemplate = require('../templates/modals.handlebars')
 const headerTemplate = require('../templates/header.handlebars')
 
@@ -29,14 +31,15 @@ const appendReviews = (data) => {
   while (dataSorted.length > 0) {
     chunked.push(dataSorted.splice(0, chunkSize))
   }
-
-  console.log(chunked)
+  store.chunked = chunked
+  store.homeI = 0
+  console.log(store.chunked)
 
   while (dataSorted.length > 3) {
     dataSorted.pop()
   }
   console.log(dataSorted)
-  const showReviewsHtml = showReviewsTemplate({ ratings: chunked[0] })
+  const showReviewsHtml = showReviewsTemplate({ ratings: chunked[store.homeI] })
   const modalsHtml = modalsTemplate()
   const headerHtml = headerTemplate()
   $('.col-md-12').append(showReviewsHtml)
@@ -45,10 +48,25 @@ const appendReviews = (data) => {
   $('body').append(modalsHtml)
 }
 
+const addMoreReviews = () => {
+  store.homeI++
+  console.log(store.homeI)
+  const showReviewsHtml = showReviewTemplateAddMore({ ratings: store.chunked[store.homeI] })
+  $('.home-reviews').append(showReviewsHtml)
+  if (store.chunked.length === store.homeI + 1) {
+    $('.show-more').remove()
+  }
+}
+
+const addHandlers = () => {
+  $('body').on('click', '.show-more', addMoreReviews)
+}
+
 const errorReviews = () => {
 
 }
 
 module.exports = {
-  loader
+  loader,
+  addHandlers
 }

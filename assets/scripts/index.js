@@ -13,4 +13,5 @@ $(() => {
   authEvents.addHandlers()
   ratingEvents.addHandlers()
   homeEvents.loader()
+  homeEvents.addHandlers()
 })
