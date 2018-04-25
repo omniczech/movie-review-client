@@ -2,39 +2,77 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 @mixin shadow {
-  box-shadow: 1px 1px 2px #aaa;
+  box-shadow: 1px 1px 2px $shadow;
+}
+
+@mixin big-shadow {
+  box-shadow: 0 0 20px $shadow;
+}
+
+$dark-green: #060;
+$light-green: #9f9;
+$header: #3f444c;
+$white: #fff;
+$backdrop: #707987;
+$shadow: #333;
+
+body {
+  background-color: $backdrop;
 }
 
 header {
+  @include shadow;
+  background: $header;
   box-sizing: border-box;
+  color: $white;
+  left: 0;
+  overflow: hidden;
   padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9;
+
   h1 {
     float: left;
-    margin: 0;
     font-size: 30px;
+    margin: 0;
   }
-  button, p{
+
+  button,
+  p {
     float: right;
   }
 
-  p{
+  p {
     float: right;
+    margin-bottom: 0;
     padding: 7px 20px;
   }
-  overflow: hidden;
 }
-.review{
-  padding: 10px;
+
+.home {
+  padding-bottom: 20px;
+}
+
+.main-content {
+  @include big-shadow;
+  background: $white;
+  padding-top: 73px;
+}
+
+.review {
   border-bottom: 1px solid #666;
   overflow: hidden;
+  padding: 10px;
 
   &:last-of-type {
-    border-bottom: none;
+    border-bottom: 0;
   }
 
   form {
     float: left;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: 10px;
   }
 }
@@ -63,8 +101,9 @@ input {
   label {
     display: block;
   }
+
   .row {
-    margin-bottom: 20px
+    margin-bottom: 20px;
   }
 }
 
@@ -95,8 +134,8 @@ input {
 
 #success-message {
   @include shadow;
-  background: #9f9;
-  border: 1px solid #060;
+  background: $light-green;
+  border: 1px solid $dark-green;
   border-radius: 5px;
   display: none;
   left: 10%;
@@ -107,7 +146,7 @@ input {
   z-index: 9999;
 
   p {
-    color: #060;
+    color: $dark-green;
     margin: 10px;
   }
 }

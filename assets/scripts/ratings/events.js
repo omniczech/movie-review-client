@@ -32,8 +32,9 @@ const onShowReview = (e) => {
 const onDeleteReview = (e) => {
   e.preventDefault()
   const data = $(e.target).attr('data-review-id')
+  const titleDelete = $(e.target).attr('data-review-title')
   // console.log(data)
-  if (confirm('Are you sure you want to remove this review? (This action cannot be reversed)')) {
+  if (confirm(`Are you sure you want to remove your review for ${titleDelete}? (This action cannot be reversed)`)) {
     api.deleteReview(data)
       .then(ui.deleteReviewSuccess(data))
       .catch(ui.deleteReviewFailure)
