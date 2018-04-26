@@ -9,7 +9,14 @@ const onSignUp = (e) => {
   const data = getFormFields(e.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(() => autoSignIn(data))
     .catch(ui.signUpFailure)
+}
+
+const autoSignIn = (data) => {
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
 }
 
 const onSignIn = (e) => {

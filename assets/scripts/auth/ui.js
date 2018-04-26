@@ -22,8 +22,8 @@ const failureDisplay = (message) => {
   setTimeout(function () { $('#error-message').fadeOut() }, 2000)
 }
 
-const signUpSuccess = () => {
-  successDisplay('Signed up successfully!<br>Please sign in now.')
+const signUpSuccess = (data) => {
+  successDisplay('')
   $('#sign-in-panel').tab('show')
 }
 
