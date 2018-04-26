@@ -41,3 +41,9 @@ After these two views and the modals were working, I updated the home page to on
 Next, I began working on the UI. I styled the page using mostly bootstrap elements to give it a nicer appearance and began adding quality of life features like clearing modals when closed, adding additional graphical displays for when a user performs an action, mostly via a div at the top of the page that displays success and error messages, but also things like having an updated review flash green quickly upon updating.
 
 After some time I decided that since user reviews would be forward facing and I would really like the project to be something presentable, I needed some sort of language filter for my reviews. Luckily I found a JavaScript filter for just that on github, [user web-mech's badwords](https://github.com/web-mech/badwords/). I installed this via NPM and set up JavaScript to test the title, genre and review itself for the presence of profanity. If the user has chosen to use vulgarity, on submission instead running the AJAX POST request, a message appears asking them to revise their review.
+
+# Future Plans
+
+* Allow users to read reviews by specific users
+* Add movie table, import and create join table between users and movies
+* Allow users to read reviews of specific movies
