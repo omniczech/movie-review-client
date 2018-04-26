@@ -2,6 +2,10 @@
 
 This is the client side half of a single page application for reviewing movies. Users can sign up for an account, review movies, edit and delete their reviews and see recent reviews.
 
+[Front End](https://omniczech.github.io/movie-review-client/)
+
+[Back End](https://movie-full-stack-rails.herokuapp.com/)
+
 # Technologies Used
 
 * HTML
