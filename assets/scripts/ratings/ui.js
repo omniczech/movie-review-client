@@ -28,6 +28,8 @@ const createReviewSuccess = (data) => {
   $('.actual-reviews').prepend(showNewReview)
   $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   $('.empty-reviews').remove()
+  $('.review#' + data.movie_rating.id).css('background', '#9f9')
+  setTimeout(() => { $('.review#' + data.movie_rating.id).css('background', 'transparent') }, 500)
 }
 
 const createReviewFailure = () => {
@@ -72,7 +74,9 @@ const editButtonClickSuccess = (data) => {
 
 const deleteReviewSuccess = (data) => {
   successDisplay('Review Successfully Removed!')
-  $('.review#' + data).fadeOut(500, function () { this.remove() })
+  $('.review#' + data).fadeOut(1000, function () { this.remove() })
+  $('.review#' + data).css('background', '#f99')
+  setTimeout(() => { $('.review#' + data).css('background', 'transparent') }, 750)
   setTimeout(function () {
     if ($('.review').length === 1) {
       $('.actual-reviews').append('<p class="empty-reviews">You don\'t seem to have any reviews. You should add some!</p>')
