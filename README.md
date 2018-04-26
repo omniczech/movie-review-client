@@ -20,7 +20,7 @@ The first stage of planning were initial layouts and user stories. The layouts c
 * As a signed in user I want to be able to adjust my rating for the film if I change my mind.
 * As a user I want to be able to see all users' ratings of films.
 
-Once intial planning was finished, and the rails API was set up ([See the back end repo]()) I began work on the front end. First I set up a basic html document with forms to interact with the API. These forms are as follows:
+Once intial planning was finished, and the rails API was set up ([See the back end repo](https://github.com/omniczech/movie-full-stack-back-end)) I began work on the front end. First I set up a basic html document with forms to interact with the API. These forms are as follows:
 
 * Sign in
 * Sign out
