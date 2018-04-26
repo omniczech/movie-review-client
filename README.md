@@ -1,74 +1,41 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Movie Review Client
 
-# browser-template
+This is the client side half of a single page application for reviewing movies. Users can sign up for an account, review movies, edit and delete their reviews and see recent reviews.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+# Technologies Used
 
-## Installation
+* HTML
+* CSS/SASS
+* JavaScript
+* jQuery
+* Handlebars
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+# Planning/Development Process
 
-## Structure
+The first stage of planning were initial layouts and user stories. The layouts can be viewed [here](https://i.imgur.com/sEgdiYb.jpg) and [here](https://i.imgur.com/mvNWNkz.jpg). User stories are as follows:
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+* As a new user I want to be able to create an account by entering my email and choosing a password.
+* As a returning user I want to be able to use my email and password I've chosen to sign in.
+* As a signed in user I want to be able to log a film, the date I saw it, and a rating out of 10 of how much I liked it.
+* As a signed in user I want to be able to adjust my rating for the film if I change my mind.
+* As a user I want to be able to see all users' ratings of films.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+Once intial planning was finished, and the rails API was set up ([See the back end repo]()) I began work on the front end. First I set up a basic html document with forms to interact with the API. These forms are as follows:
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+* Sign in
+* Sign out
+* Sign up
+* Change password
+* Add review
+* Update review
+* Delete review
+* See all reviews
+* See only your reviews
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+Once all forms were working, I began to set up handlebars files with segments of various views. The home view that shows on load originally showed all reviews from all user in a long list. On sign in, the view was updated to the user view where the user's reviews were displayed along with forms for adding editing and deleting reviews.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+I next added modals to contain the account forms (sign up, sign in, sign out, change password) and added them to the header. They are removed and added via JavaScript depending if the user is signed in or not.
 
-## Tasks
+After these two views and the modals were working, I updated the home page to only show the 3 most recent reviews. From there I set up a button to reveal 3 more reviews each time it's clicked in descending order of recency. I also updated the interface for the user view. I added an edit and delete button to each review. The update function removed the content from that review, and replaced it with a copy of the add review form which on submission updates the review. Once updated, the form is removed and the plain text version of the review is returned.
 
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+Finally I began working on the UI. I styled the page using mostly bootstrap elements to give it a nicer appearance and began adding quality of life features like clearing modals when closed, adding additional graphical displays for when a user performs an action, mostly via a div at the top of the page that displays success and error messages, but also things like having an updated review flash green quickly upon updating.

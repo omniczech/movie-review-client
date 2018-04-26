@@ -23,19 +23,16 @@ const failureDisplay = (message) => {
 }
 
 const signUpSuccess = () => {
-  console.log('Sign up success')
   successDisplay('Signed up successfully!<br>Please sign in now.')
   $('#sign-in-panel').tab('show')
 }
 
 const signUpFailure = () => {
-  console.log('Sign up failed!')
   failureDisplay('Something went wrong.<br>Make sure your password and password confirmation are the same.')
 }
 
 const signInSuccess = (data) => {
   successDisplay('Signed in successfully!')
-  console.log('Sign in success')
   store.user = data.user
   $('.home').remove()
   // $('#sign-in-up-modal').modal('hide')
@@ -49,22 +46,18 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = () => {
-  console.log('Sign in failure')
   failureDisplay('Something went wrong.<br>Try entering your email and password again.')
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('Change Password success')
   successDisplay('Password changed successfully!')
 }
 
 const changePasswordFailure = (data) => {
-  console.log('Change Password failure')
   failureDisplay('Something went wrong.')
 }
 
 const signOutSuccess = () => {
-  console.log('Sign out success')
   successDisplay('Signed out successfully!')
   store.user = null
   $('header').empty()
@@ -74,7 +67,6 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  console.log('Sign up success')
   failureDisplay('Something went wrong.')
 }
 

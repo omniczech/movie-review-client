@@ -23,45 +23,36 @@ const failureDisplay = (message) => {
 }
 
 const createReviewSuccess = (data) => {
-  console.log(data)
-  console.log('Create Review success')
   successDisplay('Review added successfully!')
   const showNewReview = showEditableReviewsTemplate({ rating: data.movie_rating })
-  console.log(showNewReview)
   $('.actual-reviews').prepend(showNewReview)
   $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   $('.empty-reviews').remove()
 }
 
 const createReviewFailure = () => {
-  console.log('Create Review failed!')
   failureDisplay('Something went wrong submitting your review')
 }
 
 const updateReviewSuccess = (data) => {
-  console.log('Create Review success')
   successDisplay('Review Successfully updated!')
   const showEditableReviewHtml = showEditableReviewsTemplate({ rating: data.movie_rating, single: true })
   $('.review#' + data.movie_rating.id).empty()
   $('.review#' + data.movie_rating.id).append(showEditableReviewHtml)
   $('.review#' + data.movie_rating.id).css('background', '#9f9')
   setTimeout(() => { $('.review#' + data.movie_rating.id).css('background', 'transparent') }, 500)
-  console.log(data)
   $('.start-update').show()
 }
 
 const updateReviewFailure = () => {
-  console.log('Create Review failed!')
   failureDisplay('Something went wrong updating your review')
 }
 
 const showReviewSuccess = (data) => {
-  // successDisplay('Review Successfully shown!')
-  // console.log(data)
   const dataSorted = data.movie_ratings.sort(function (a, b) {
     return b.id - a.id
   })
-  console.log(dataSorted)
+  // console.log(dataSorted)
   const showReviewsHtml = showUserReviewsTemplate({ ratings: data.movie_ratings })
   $('.col-md-12').append(showReviewsHtml)
 }
@@ -70,8 +61,6 @@ const showReviewFailure = () => {
   failureDisplay('Something went wrong updating your review')
 }
 const editButtonClickSuccess = (data) => {
-  console.log(data.movie_rating)
-  console.log(showEditingReviewsTemplate)
   $('.review#' + data.movie_rating.id).empty()
   const showEditableReviewHtml = showEditingReviewsTemplate({ rating: data.movie_rating })
   setTimeout(function () {
@@ -84,14 +73,11 @@ const editButtonClickSuccess = (data) => {
 const deleteReviewSuccess = (data) => {
   successDisplay('Review Successfully Removed!')
   $('.review#' + data).fadeOut(500, function () { this.remove() })
-  console.log('Number of reviews', $('.review').length)
   setTimeout(function () {
     if ($('.review').length === 1) {
-      console.log('NONE')
       $('.actual-reviews').append('<p class="empty-reviews">You don\'t seem to have any reviews. You should add some!</p>')
     }
   }, 0)
-  console.log(data)
 }
 
 module.exports = {

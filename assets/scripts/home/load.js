@@ -33,12 +33,10 @@ const appendReviews = (data) => {
   }
   store.chunked = chunked
   store.homeI = 0
-  console.log(store.chunked)
 
   while (dataSorted.length > 3) {
     dataSorted.pop()
   }
-  console.log(dataSorted)
   const showReviewsHtml = showReviewsTemplate({ ratings: chunked[store.homeI] })
   const modalsHtml = modalsTemplate()
   const headerHtml = headerTemplate()
@@ -57,7 +55,6 @@ const appendReviews = (data) => {
 
 const addMoreReviews = () => {
   store.homeI++
-  console.log(store.homeI)
   const showReviewsHtml = showReviewTemplateAddMore({ ratings: store.chunked[store.homeI] })
   $('.home-reviews').append(showReviewsHtml)
   if (store.chunked.length === store.homeI + 1) {

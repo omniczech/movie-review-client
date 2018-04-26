@@ -1,19 +1,29 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../../public/shrek/stylesheet';
+
 @mixin shadow {
   box-shadow: 1px 1px 2px $shadow;
 }
+
 @mixin big-shadow {
   box-shadow: 0 0 20px $shadow;
 }
+
 $dark-green: #060;
 $light-green: #9f9;
 $header: #3f444c;
 $white: #fff;
 $backdrop: #707987;
 $shadow: #333;
+$light-grey: #ddd;
 
+$red: #f00;
+$purple: #800080;
+$green: #008000;
+$yellow: #ff0;
+$blue: #00f;
+$orange: #ffa500;
 
 body {
   background-color: $backdrop;
@@ -67,17 +77,18 @@ header {
 .main-content {
   @include big-shadow;
   background: $white;
+  margin-bottom: 20px;
   padding-top: 73px;
 }
 
 .tab-pane {
-  border: 1px solid #ddd;
+  border: 1px solid $light-grey;
   border-top: 0;
   padding: 10px;
 }
 
 .review {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid $light-grey;
   overflow: hidden;
   padding: 10px;
   transition: .5s;
@@ -132,7 +143,7 @@ input {
 #error-message {
   @include shadow;
   background: #f99;
-  border: 1px solid #f00;
+  border: 1px solid $red;
   border-radius: 5px;
   display: none;
   left: 10%;
@@ -168,121 +179,118 @@ input {
 }
 
 .rainbow {
-  /* Chrome, Safari, Opera */
-  -webkit-animation: rainbow 7s infinite;
-  /* Internet Explorer */
   -ms-animation: rainbow 7s infinite;
-  /* Standar Syntax */
+  -webkit-animation: rainbow 7s infinite;
   animation: rainbow 7s infinite;
 }
-/* Chrome, Safari, Opera */
+
 @-webkit-keyframes rainbow {
   0% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 
   15% {
-    color: orange;
-    background: blue;
+    background: $blue;
+    color: $orange;
   }
 
   30% {
-    color: yellow;
-    background: purple;
+    background: $purple;
+    color: $yellow;
   }
 
   45% {
-    color: green;
-    background:red;
+    background: $red;
+    color: $green;
   }
 
   60% {
-    color: blue;
-    background:orange;
+    background: $orange;
+    color: $blue;
   }
 
   75% {
-    color: purple;
-    background: yellow;
+    background: $yellow;
+    color: $purple;
   }
 
   100% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 }
-/* Internet Explorer */
+
 @-ms-keyframes rainbow {
   0% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 
   15% {
-    color: orange;
-    background: blue;
+    background: $blue;
+    color: $orange;
   }
 
   30% {
-    color: yellow;
-    background: purple;
+    background: $purple;
+    color: $yellow;
   }
 
   45% {
-    color: green;
-    background:red;
+    background: $red;
+    color: $green;
   }
 
   60% {
-    color: blue;
-    background:orange;
+    background: $orange;
+    color: $blue;
   }
 
   75% {
-    color: purple;
-    background: yellow;
+    background: $yellow;
+    color: $purple;
   }
 
   100% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 }
-/* Standar Syntax */
+
 @keyframes rainbow {
   0% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 
   15% {
-    color: orange;
-    background: blue;
+    background: $blue;
+    color: $orange;
   }
 
   30% {
-    color: yellow;
-    background: purple;
+    background: $purple;
+    color: $yellow;
   }
 
   45% {
-    color: green;
-    background:red;
+    background: $red;
+    color: $green;
   }
 
   60% {
-    color: blue;
-    background:orange;
+    background: $orange;
+    color: $blue;
   }
 
   75% {
-    color: purple;
-    background: yellow;
+    background: $yellow;
+    color: $purple;
   }
 
   100% {
-    color: red;
-    background: green
+    background: $green;
+    color: $red;
   }
 }
