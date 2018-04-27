@@ -6,9 +6,11 @@ const global = require('../global')
 const ui = require('./ui')
 const Filter = require('bad-words')
 const filter = new Filter()
+filter.removeWords('ass')
 
 const onAddReview = (e) => {
   e.preventDefault()
+  filter.removeWords('ass', 'classic')
   const data = getFormFields(e.target)
   const bannedWord = 'Butt Mansfield'
   const shrek = 'Shrek'
@@ -30,10 +32,15 @@ const onAddReview = (e) => {
 
 const onEditReview = (e) => {
   e.preventDefault()
+  filter.removeWords('ass', 'classic')
   const data = getFormFields(e.target)
-  api.updateReview(data)
-    .then(ui.updateReviewSuccess)
-    .catch(ui.updateReviewFailure)
+  if (filter.isProfane(data.movie_rating.review) || filter.isProfane(data.movie_rating.movie_title) || filter.isProfane(data.movie_rating.movie_genre)) {
+    global.failureDisplayGlobal('It looks like you\'re trying to use some foul language. <br>Please edit your review fields to not contain any curse words, then resubmit.', false, 5000)
+  } else {
+    api.updateReview(data)
+      .then(ui.updateReviewSuccess)
+      .catch(ui.updateReviewFailure)
+  }
 }
 
 const onShowReview = (e) => {
