@@ -42,7 +42,20 @@ const signInSuccess = (data) => {
   <form id="sign-out">
     <input required type="submit" value="Sign Out" class="form-control">
   </form>
-  <p>Signed in as: ${data.user.email}</p>`)
+  <p>Signed in as: ${data.user.email}<br><a href="#" id="my-reviews">View my account</a></p>`)
+}
+
+const myAccount = () => {
+  console.log('myaccount ran')
+  $('.home').remove()
+  $('#my-account-page').remove()
+  setTimeout(function () { showAccount.onShowReview() }, 0)
+  $('.account-buttons').empty()
+  $('.account-buttons').append(`<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-change-pass-modal">Change Password</button>
+  <form id="sign-out">
+    <input required type="submit" value="Sign Out" class="form-control">
+  </form>
+  <p>Signed in as: ${store.user.email}<br><a href="#" id="my-reviews">View my account</a></p>`)
 }
 
 const signInFailure = () => {
@@ -60,6 +73,7 @@ const changePasswordFailure = (data) => {
 const signOutSuccess = () => {
   successDisplay('Signed out successfully!')
   store.user = null
+  $('.home').remove()
   $('header').empty()
   $('.user-reviews, #add-review').remove()
   showHome.loader()
@@ -78,5 +92,6 @@ module.exports = {
   changePasswordFailure,
   changePasswordSuccess,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  myAccount
 }

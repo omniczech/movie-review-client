@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const home = require('../home/load')
+const store = require('../store')
 
 const onSignUp = (e) => {
   e.preventDefault()
@@ -42,11 +44,25 @@ const onChangePassword = (e) => {
     .catch(ui.changePasswordFailure)
 }
 
+const onMyReviewsClick = (e) => {
+  e.preventDefault()
+  console.log('onMyReviewsClick ran')
+  ui.myAccount()
+}
+
+const onHomeLinkClick = (e) => {
+  e.preventDefault()
+  console.log('onHomeLinkClick ran')
+  if (store.user && $('.home').length === 0) { home.appendReviewsLoggedIn() }
+}
+
 const addHandlers = () => {
   $('body').on('submit', '#sign-up', onSignUp)
   $('body').on('submit', '#sign-in', onSignIn)
   $('body').on('submit', '#sign-out', onSignOut)
   $('body').on('submit', '#change-pass', onChangePassword)
+  $('body').on('click', '#my-reviews', onMyReviewsClick)
+  $('body').on('click', '#home-link', onHomeLinkClick)
 }
 
 module.exports = {

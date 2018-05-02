@@ -53,6 +53,14 @@ const appendReviews = (data) => {
   })
 }
 
+const appendReviewsLoggedIn = (data) => {
+  store.homeI = 0
+  const showReviewsHtml = showReviewsTemplate({ ratings: store.chunked[store.homeI] })
+  $('#my-account-page').remove()
+  $('.col-md-12').append('<div class="home"></div>')
+  $('.home').append(showReviewsHtml)
+}
+
 const addMoreReviews = () => {
   store.homeI++
   const showReviewsHtml = showReviewTemplateAddMore({ ratings: store.chunked[store.homeI] })
@@ -72,5 +80,6 @@ const errorReviews = () => {
 
 module.exports = {
   loader,
-  addHandlers
+  addHandlers,
+  appendReviewsLoggedIn
 }
