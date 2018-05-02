@@ -5,12 +5,13 @@ const api = require('./api')
 const global = require('../global')
 const ui = require('./ui')
 const Filter = require('bad-words')
-const filter = new Filter()
-filter.removeWords('ass')
+const curselist = require('../badwords.json')
+const filter = new Filter({ emptyList: true })// list: curselist.words })
+filter.list = curselist.words
 
 const onAddReview = (e) => {
   e.preventDefault()
-  filter.removeWords('ass', 'classic')
+  console.log(filter)
   const data = getFormFields(e.target)
   const bannedWord = 'Butt Mansfield'
   const shrek = 'Shrek'
