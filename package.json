@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bad-words": "^1.6.1",
+    "hoek": "^5.0.3",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
