@@ -9,7 +9,7 @@
   "dependencies": {
     "bad-words": "^1.6.5",
     "hoek": "^5.0.4",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
